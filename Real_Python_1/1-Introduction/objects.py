@@ -7,9 +7,6 @@ name = "Scott"
 message = "Welcome " + name
 print(message.upper())
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 response = raw_input("What should I do")
 response = response.upper()
 print("You said: ", response.upper())
@@ -39,13 +36,3 @@ print("You said: ", prompt)
 password = "PYTHONCODER"
 password = password.lower()
 print(password)
-=======
-response = input("What shoudl I do")
-response = response.upper()
-print("Well's ", response)
->>>>>>> eaed3fd25363de18640eee9d5cc35214a42175d9
-=======
-response = input("What shoudl I do")
-response = response.upper()
-print("Well's ", response)
->>>>>>> eaed3fd25363de18640eee9d5cc35214a42175d9
