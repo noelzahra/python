@@ -41,19 +41,27 @@ addWord = flavor[:9] + "fun"
 print(addWord)
 
 # Exercises
-newString = "Exercise-run"
-length = len(newString)
-print(length)
-
-stringX = "New"
-stringY = "York"
-city = stringX + " " + stringY
-print(city)
+newString = "Welcome"
+newStringLength = len(newString)
+print(newStringLength)
 
 borough1 = "Manhattan"
-borough2 = "Queens"
-borough3 = "Brooklyn"
+borough2 = "Brooklyn"
+borough3 = "Staten Island"
 print(borough1, borough2, borough3)
+
+phrase = "Python\'s frameworks include Django and Pyramid"
+print(phrase)
+
+multiLineString = """This string spans across
+line1
+line2
+line3"""
+print(multiLineString)
+
+singleLineString = "String stays on one line\
+eventhough it spreads on two lines"
+print(singleLineString)
 
 phrase = "bazinga"
 subString = phrase[2:6]
@@ -62,4 +70,4 @@ print(subString)
 # A more advanced way to do the above example would be:
 start_index = 2
 selection = phrase[start_index:len(phrase)-start_index+1]
-print("Advacned selection: " + selection)
+print(selection)
