@@ -1,5 +1,6 @@
 from __future__ import print_function
 
-user_input = raw_input("tell me your password: ")
-first_letter = user_input[0]
-print("The first letter of your password is: ", first_letter.upper())
+# Return the upper-case first letter entered by the user
+prompt = raw_input("What is you password: ")
+first_letter = prompt[0]
+print("First letter is: ", first_letter.upper())
