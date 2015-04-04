@@ -29,8 +29,8 @@ print("=========================\n" + 'Exercise')
 print("AAA".find("a"))
 
 update = "version 2.0"
-version = 2.0
-print(update.find(str(version)))
+v_num = 2.0
+print(update.find(str(v_num)))
 
-prompt = raw_input("Please enter your password: ")
-print(prompt.find("A"))
+prompt = raw_input("What\'s your password")
+print(prompt.find("a"))
