@@ -12,7 +12,7 @@ def bool_and(num1, num2, num3, num4):
         return "{} < {} and {} < {}: {}".format(num1, num2, num3, num4, (num1 <
                                                 num2) and (num3 < num4))
 
-print("Both are true:\n", (bool_and(2, 3, 6, 8)))
+print("Both are true:\n", bool_and(2, 3, 6, 8))
 print("First statement is false:\n", bool_and(3, 2, 6, 8))
 print("Second statement is false:\n", bool_and(2, 3, 8, 6))
 print("Both statements are false:\n", bool_and(5, 2, 8, 4))
