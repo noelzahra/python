@@ -23,11 +23,14 @@ print(bool_not(8, 4))
 print("{} and not ({} != 1): {}".format(True, 1, (True and not(1 != 1))))
 print("True and not (1 != 1) means True and True")
 
+print("===================\n\t\tExercises\n===================")
+
 print("(1 <= 1) and (1 != 1) bool is: {} and {} = {}\
       ".format((1 <= 1), (1 != 1), (1 <= 1) and (1 != 1)))
 print("not (1 != 2) bool is: not {} = {}".format(not (1 != 2), (1 != 2),
                                                  not (1 != 2)))
 print("(\"good\" != \"bad\") or False is: {} or {} bool is {}\
       ".format(("good" != "bad"), False, ("good" != "bad") or False))
-print("{} and {} bool is {}".format(("good" != "Good"), not (1 == 1),
-                                    ("good" != "Good") and not (1 == 1)))
+print("(\"good\" != \"Good\") and not (1 == 1) is: {} and {} bool is: {}\
+      ".format(("good" != "Good"), not (1 == 1), ("good" != "Good") and not
+               (1 == 1)))
