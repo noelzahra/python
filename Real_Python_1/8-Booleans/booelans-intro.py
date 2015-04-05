@@ -61,3 +61,38 @@ print("======================\nis equal\t\t==\
  \n======================")
 is_equal(4, 4)
 is_equal(1, 3)
+
+print("======================\n\t\tCompare strings\
+ \n======================")
+
+# string comparison
+
+
+def compare_true_strings(str1, str2):
+    if(str1 == str2):
+        print("{} == {} is: {}".format(str1, str2, (str1 == str2)))
+    else:
+        print("{} != {} is: {}".format(str1, str2, (str1 == str2)))
+
+compare_true_strings("dog", "dog")
+compare_true_strings("cat", "dog")
+
+
+def compare_false_strings(str1, str2):
+    if(str1 != str2):
+        print("{} != {}: {}".format(str1, str2, (str1 != str2)))
+    else:
+        print("{} != {}: {}".format(str1, str2, (str1 != str2)))
+
+compare_false_strings("bird", "fish")
+compare_false_strings("fish", "fish")
+
+print("======================\n\t\tExercise\
+ \n======================")
+
+print(1 <= 1)
+print(1 != 1)
+print(1 != 2)
+print("good" != "bad")
+print("good" != "Good")
+print(123 == "123")
