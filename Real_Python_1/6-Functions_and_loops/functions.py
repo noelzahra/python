@@ -1,33 +1,60 @@
 from __future__ import print_function
-from __future__ import division
-# function
 
 
 def square(num):
-    square_num = num ** 2
-    return square_num
+    square_number = num ** 2
+    return square_number
 
-input_num = 8
-output_num = square(input_num)
-print(output_num)
+output = square(8)
+print(output)
 
 
-def subtract(num1, num2):
+def add(num1, num2):
+    total = num1 + num2
+    return total
+print(add(33, 11))
+
+
+def subtractStd(num1, num2):
     if(num1 >= num2):
         return num1 - num2
     else:
         return num2 - num1
 
-print(subtract(30, 10))
-print(subtract(15, 50))
+print(subtractStd(110, 300))
+print(subtractStd(200, 90))
+
+# Ternary operator
+print("================\n" + "Ternary operator" + "\n================")
 
 
-def subtract_ternary(num1, num2):
+def subtract(num1, num2):
+    """This is a ternary function which when TRUE returns num1 - num2,
+       when FALSE returns else statment"""
     return num1 - num2 if num1 >= num2 else num2 - num1
-print(subtract_ternary(33, 99))
+
+help(subtract)
+print(subtract(30, 20))
+print(subtract(10, 50))
 
 
 def division(num1, num2):
     return num1 / num2 if num1 >= num2 else num2 / num1
 
-print(division(100, 10))
+print(division(50, 5))
+print(division(5, 40))
+
+
+print("================\n" + "Exercise" + "\n================")
+
+
+def cube(num):
+    return num ** 3
+print("4 cubed is:", cube(4))
+
+
+def multiply(num1, num2):
+    total = num1 * num2
+    return "{} multiplied by {} = {}".format(num1, num2, total)
+
+print(multiply(2, 5))
