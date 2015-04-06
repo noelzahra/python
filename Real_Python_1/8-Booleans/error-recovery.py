@@ -13,7 +13,7 @@ divide(33, 3)
 divide(33, 0)
 
 try:
-    number = int(raw_input("Enter an integer whichis not zero: "))
+    number = int(raw_input("Enter an integer which is not zero: "))
     print("10 / {} = {}".format(number, 10.0 / number))
 except ValueError:
     print("That's not an integer")
