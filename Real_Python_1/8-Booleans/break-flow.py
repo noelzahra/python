@@ -32,6 +32,7 @@ search_letter("Getting really good at this", "x")
 search_letter("Python is a great language to work with", "w")
 
 # Exiting a while loop with a break
+'''
 tries = 0
 while tries < 3:
     password = raw_input("Password: ")
@@ -41,3 +42,20 @@ while tries < 3:
         tries += 1
 else:
     print("Permission denied")
+'''
+print("===================\n\t\tExercises\n===================")
+
+while True:
+    prompt = raw_input("Enter a letter: ")
+    if((prompt == "q") or (prompt == "Q")):
+        break
+    print("{} entered".format(prompt))
+
+
+def fizzbuzz(num):
+    for i in range(1, num):
+        if (i % 3 == 0):
+            continue
+        print("{} is not multiple of 3".format(i))
+
+fizzbuzz(50)
