@@ -46,7 +46,7 @@ cardinal_nums = ("first", "second", "third")
 # Display the second object in the tuple
 print(cardinal_nums[1])
 
-# unpack the tuple into three string and display them
+# unpack the tuple into three strings and display them
 pos1, pos2, pos3 = cardinal_nums
 print(pos1)
 print(pos2)

@@ -98,6 +98,8 @@ print(output)
 
 print("==" * 8 + "\n\t\tlist of lists\n" + "==" * 8)
 
+
+# indexing a list in lists
 cars = [
     ["Ford", 1900, 2014],
     ["Porsche", 2100, 2013],
@@ -106,6 +108,7 @@ cars = [
     ["Mini", 1600, 2010]
 ]
 
+# pattern: singular(list) in multiple(lists collection)
 for car in cars:
     print("Car brand: {}\nEngine: {}cc\nYear: {}\n==========".format(car[0],
           car[1], car[2]))

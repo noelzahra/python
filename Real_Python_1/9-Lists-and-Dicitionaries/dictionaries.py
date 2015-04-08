@@ -7,7 +7,7 @@ phonebook = {
                 "Pierre": "79796040",
                 "Ruth": "79458001",
                 "Noel": "79798002",
-                "hone": "21683626"
+                "home": "21683626"
 }
 
 print(phonebook)
