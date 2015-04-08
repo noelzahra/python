@@ -57,7 +57,7 @@ ingredients = "eggs, spam, po rocks, soya"
 list = ingredients.split(",")
 print(list)
 
-print("================\n" + "Exercises" + "\n================")
+print("==" * 8 + "\n\tlist methods\n" + "==" * 8)
 
 desserts = ["ice cream", "cookies"]
 desserts.sort()
@@ -85,6 +85,8 @@ string = "cookies, cookies, cookies"
 breakfast = string.split(", ")
 print(breakfast)
 
+print("==" * 8 + "\n\t\tExercises\n" + "==" * 8)
+
 
 def list_numbers(array):
     for i in array:
@@ -93,3 +95,17 @@ def list_numbers(array):
 
 output = list_numbers([2, 4, 8, 16, 32, 64])
 print(output)
+
+print("==" * 8 + "\n\t\tlist of lists\n" + "==" * 8)
+
+cars = [
+    ["Ford", 1900, 2014],
+    ["Porsche", 2100, 2013],
+    ["Renault", 1700, 2015],
+    ["Audi", 2100, 2015],
+    ["Mini", 1600, 2010]
+]
+
+for car in cars:
+    print("Car brand: {}\nEngine: {}cc\nYear: {}\n==========".format(car[0],
+          car[1], car[2]))
