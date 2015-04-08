@@ -86,10 +86,10 @@ breakfast = string.split(", ")
 print(breakfast)
 
 
-def list_nums(array):
-    for num in array:
-        if num >= 2 and num <= 20:
-            print(num)
+def list_numbers(array):
+    for i in array:
+        if(i >= 2) or (i <= 20):
+            print(i)
 
-list_nums([2, 4, 8, 16, 32, 64])
-print(list_nums)
+output = list_numbers([2, 4, 8, 16, 32, 64])
+print(output)
