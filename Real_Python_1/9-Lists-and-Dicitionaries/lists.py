@@ -88,7 +88,7 @@ print(breakfast)
 
 def list_numbers(array):
     for i in array:
-        if(i >= 2) or (i <= 20):
+        if(i >= 2) and (i <= 20):
             print(i)
 
 output = list_numbers([2, 4, 8, 16, 32, 64])
