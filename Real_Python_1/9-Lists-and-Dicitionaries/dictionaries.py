@@ -91,3 +91,27 @@ star_wars_birthdays["Obi-Wan Kenobi"] = {"month": "March", "day": 11,
 star_wars_birthdays["Darth Vader"] = {"month": "April", "day": 1,
                                       "year": 1941}
 print(star_wars_birthdays)
+
+
+def check_name(dictionary):
+    for name in ["Yoda", "Darth Vader"]:
+        if name not in dictionary:
+            dictionary[name] = "unknown"
+    print("Yoda: {}\nDarth Vader: {}".format(dictionary[name],
+                                             dictionary[name]))
+
+check_name(star_wars_birthdays)
+
+print("\n===================\n\t\tloop keys\n===================")
+for name in star_wars_birthdays:
+    print(name, star_wars_birthdays[name])
+
+del(star_wars_birthdays["Darth Vader"])
+print(star_wars_birthdays)
+
+birthdays_dict = dict(
+                      [("Luke Skywalker", "5/15/19"),
+                       ("Obi-Wan-Kenobi", "3/11/57"),
+                       ("Darth Vader", "4/1/41")]
+                      )
+print(birthdays_dict)

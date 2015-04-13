@@ -2,8 +2,8 @@ from __future__ import print_function
 
 # tuples are immutable arrays
 
-tuple_one = ["a", "tuple", "cannot", "be", "changed"]
-print(tuple_one)
+tuple_one = ("a", "tuple", "cannot", "be", "changed")
+print(tuple_one, type(tuple_one))
 
 # no methods like append() or sort()
 # index() method is available

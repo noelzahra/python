@@ -1,0 +1,6 @@
+This is my first line
+Python is really easy to generate files
+Looking forward to start Django
+Python has many other frameworks besides Django.
+These include Pyramid, Flask and Tornado.
+Some libraries are really worth discovering
