@@ -5,19 +5,19 @@ import random
 def capital_guess(state, capital):
         tries = 0
         while tries < 3:
-            guess = raw_input("The capital of \'{}\'?".format(state.lower()))
+            guess = input(f"The capital of {state}?")
             if guess == "exit":
-                    print "The capital of {} is {}".format(state.upper(),
-                                                           capital)
-                    print "Goodbye"
+                    print (f"The capital of {state.upper()} is {capital}")
+                    print ("Goodbye")
                     break
             elif guess == capital.lower() or capital.capitalize():
-                    print "Correct"
+                    print ("Correct")
                     break
             else:
-                    print "Try again"
+                    print ("Try again")
                     tries += 1
 
-state = random.choice(capitals_dict.keys())
-capital = capitals_dict[state]
+state = random.choice(list(capitals_dict.items()))
+capital = capitals_dict.get(state)
 capital_guess(state, capital)
+

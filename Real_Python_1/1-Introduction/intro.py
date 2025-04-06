@@ -1,7 +1,12 @@
-from __future__ import print_function
+import datetime
 
-# Basic print command
+date = datetime.date(1969, 12, 21)
+name4 = 'Noel'
+dob = 'Birthday'
 
+print(f"{name4}'s {dob} is on {date}")
+
+# # Basic print command
 print("Hello World")
 
 name = "Pierre"
@@ -10,22 +15,22 @@ print(name)
 concat = "============" + "\n" + name + " " + "Zahra" + "\n" + "============"
 print(concat)
 
-# Maths
+# # Maths
 sum = 2 + 2
 print(sum)
 
-# Python 3
+# # Python 3
 print('Python 3 print function')
 
-# strings
+# # strings
 phrase = "Scott"
 location = "Valletta"
 message = "Welcome" + " " + phrase + " from " + location
 print(message)
 
-'''
-This is a long comment that can be split one more than one line
-'''
+# '''
+# This is a long comment that can be split one more than one line
+# '''
 sports = "running" + "\n" + "is #1 sport"
 string_number = "\n" + "1234"
 print(sports, string_number)
@@ -49,3 +54,5 @@ print(multiString)
 longString = "This is a long string which is uninterrupted \
 and should continue on the same line with the addition of a backslash"
 print(longString)
+#type of variable
+print(type(longString))

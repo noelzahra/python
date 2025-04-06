@@ -1,6 +1,6 @@
-from __future__ import print_function
+#Run in terminal
 
-string = raw_input("Enter some text: ")
+string = input("Enter some text: ")
 string = string.replace("A", "4")
 string = string.replace("a", "4")
 string = string.replace("b", "8")

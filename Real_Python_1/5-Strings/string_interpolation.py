@@ -25,8 +25,12 @@ print(type(animal) is str)
 concat = str(weight) + "kg is the weight of the " + animal
 print(concat)
 
+#format string beofre Python 3.6, depracated now
 print("{}kg is the weight of the {}".format(weight, animal))
 
 print("{1}kg is the weight of the {0}.".format(animal, weight))
 
-print("{}kg is the {}\'s weight".format(1, "cat"))
+weight2 = 2.0
+animal2 = "cat"
+#format string after Python 3.6
+print(f"{weight2}kg is the {animal2}\'s weight")
