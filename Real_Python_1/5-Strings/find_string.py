@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Find string from a string
 
 # Find location os search term
@@ -32,5 +30,5 @@ update = "version 2.0"
 v_num = 2.0
 print(update.find(str(v_num)))
 
-prompt = raw_input("What\'s your password")
+prompt = input("What\'s your password")
 print(prompt.find("a"))

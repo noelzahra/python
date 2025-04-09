@@ -23,3 +23,11 @@ print(letters)
     Return is always at the end of the function
 '''
 
+#Function call, pass args
+def greeting(first_name, second_name) -> str:
+    #execution with args
+    user_name = f"{first_name.capitalize()} {second_name.capitalize()}"
+    #return string value
+    return  f"Good morning {user_name}! \nToday is a good day to code some Python"
+
+print(greeting("Noel", "Zahra"))
