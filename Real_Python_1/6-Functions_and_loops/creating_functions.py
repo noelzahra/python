@@ -16,3 +16,8 @@ call_number(79798002)
 
 new_contact = call_number(99667788)
 wrong_format_contact = call_number(9922883377)
+
+def addition(num1, num2):
+    return num1 + num2
+
+print(addition(5,6))
