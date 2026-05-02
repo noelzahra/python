@@ -1,6 +1,7 @@
 #SMTP library SSL connection use port 465
 
-import smtplib, ssl
+import smtplib
+import ssl
 from datetime import datetime
 
 #Constants

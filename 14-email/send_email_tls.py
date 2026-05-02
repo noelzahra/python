@@ -1,6 +1,5 @@
 #SMTP library TLS connection use port 587
 
-
 import smtplib
 import ssl
 
