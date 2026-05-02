@@ -5,7 +5,7 @@ from datetime import datetime
 
 #Constants
 SMTP_SERVER = "smtp.gmail.com"
-PORT = 465
+PORT = 465 #SSL port
 SENDER = "zarafinancial@gmail.com"
 APP_PASSWORD = "tglz wtgi pucc vwiv"
 

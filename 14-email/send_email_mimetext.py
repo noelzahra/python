@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 #Constants
 SMTP_SERVER = "smtp.gmail.com"
-PORT = 465 #SSL port 465
+PORT = 465 #SSL port
 SENDER = "zarafinancial@gmail.com"
 RECIEVER = "noel.zahra@gov.mt"
 APP_PASSWORD = "tglz wtgi pucc vwiv"
