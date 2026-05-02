@@ -1,6 +1,7 @@
 #Plaintext email over SSL
 
-import smtplib, ssl
+import smtplib
+import ssl
 from datetime import datetime
 
 #Constants
