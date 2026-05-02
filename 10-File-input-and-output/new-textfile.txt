@@ -1,0 +1,6 @@
+This is a new text file to test skills gained in creating text files.
+This textfile tests more functionality with python and its frameworks.
+Besides the fundamentals in functional programming we need to cover OOP.
+Further functionality can be gained form python libraries.
+The most used libraries include numpy, pandas and scipy.
+Most known frameworks include pyramid, Django and flask.
