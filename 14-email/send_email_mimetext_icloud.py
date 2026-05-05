@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 #Constants
 SMTP_SERVER = "smtp.mail.me.com"
-PORT = 587 #SSL port
+PORT = 587 #TLS port
 SENDER_EMAIL = "noelzahra@icloud.com"
 RECIPIENT_EMAIL = "noel.zahra@gov.mt"
 APP_PASSWORD = "jklh-paxk-enyn-khak"
