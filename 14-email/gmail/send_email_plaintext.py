@@ -2,14 +2,19 @@
 
 import smtplib
 import ssl
+from dotenv import load_dotenv
+import os
 from datetime import datetime
 
+load_dotenv()
+
 #Constants
-SMTP_SERVER = "smtp.gmail.com"
-PORT = 465 #SSL port
-SENDER = "zarafinancial@gmail.com"
-RECIEVER = "noel.zahra@gov.mt"
-APP_PASSWORD = "tglz wtgi pucc vwiv"
+SENDER = os.getenv("SENDER")
+RECIEVER = os.getenv("RECIEVER")
+APP_PASSWORD = os.getenv("APP_PASSWORD")
+SMTP_SERVER = os.getenv("SMTP_SERVER")
+PORT = int(os.getenv("SSL_PORT"))
+
 
 now = datetime.now()
 timestamp = now.strftime("%A %H:%M:%S")

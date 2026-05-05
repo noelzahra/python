@@ -1,28 +1,32 @@
-#MIME email over SSL
+#gmail MIME email over SSL
 
 import smtplib 
 import ssl
+from dotenv import load_dotenv
+import os
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-#Constants
-SMTP_SERVER = "smtp.mail.me.com"
-PORT = 587 #TLS port
-SENDER_EMAIL = "noelzahra@icloud.com"
-RECIPIENT_EMAIL = "noel.zahra@gov.mt"
-APP_PASSWORD = "jklh-paxk-enyn-khak"
+load_dotenv()
 
+SENDER = os.getenv("SENDER")
+APP_PASSWORD = os.getenv("APP_PASSWORD")
+RECIEVER = os.getenv("RECIEVER")
+SMTP_SERVER = os.getenv("SMTP_SERVER")
+PORT = int(os.getenv("SSL_PORT"))
+
+#Get current date and time
 now = datetime.now()
 day = now.strftime("%a, %d-%b-%Y")
 timestamp = now.strftime("%d-%b-%Y, %H:%M:%S")
 
-context = ssl.create_default_context()
+#Email message
 message = MIMEMultipart('alternative')
 
 message['Subject'] = "Daybatch Notification"
-message['From'] = SENDER_EMAIL
-message['To'] = RECIPIENT_EMAIL
+message['From'] = SENDER
+message['To'] = RECIEVER
 
 text = """\
 Subject: CATI dashboard notification
@@ -73,7 +77,8 @@ html_message = MIMEText(html, 'html')
 message.attach(text_message)
 message.attach(html_message) #last attach is preferred one, shown first by browser
 
-with smtplib.SMTP(SMTP_SERVER, PORT) as server:
-    server.starttls() #upgrade to secure connection
-    server.login(SENDER_EMAIL, APP_PASSWORD)
-    server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, message.as_string())
+context = ssl.create_default_context()
+
+with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
+    server.login(SENDER, APP_PASSWORD)
+    server.sendmail(SENDER, RECIEVER, message.as_string())

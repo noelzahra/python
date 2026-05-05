@@ -1,4 +1,4 @@
-#MIME email over TLS
+#outlook MIME email over TLS
 
 import smtplib
 from dotenv import load_dotenv
