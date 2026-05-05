@@ -1,14 +1,18 @@
 #SMTP library SSL connection use port 465
 
+import os
 import smtplib
 import ssl
+from dotenv import load_dotenv
 from datetime import datetime
 
+load_dotenv()
+
 #Constants
-SMTP_SERVER = "smtp.gmail.com"
-PORT = 465 #SSL port
-SENDER = "zarafinancial@gmail.com"
-APP_PASSWORD = "tglz wtgi pucc vwiv"
+SMTP_SERVER = os.getenv("SMTP_SERVER")
+PORT = int(os.getenv("SSL_PORT"))
+SENDER = os.getenv("SENDER")
+APP_PASSWORD = os.getenv("APP_PASSWORD")
 
 context = ssl.create_default_context()
 now = datetime.now()
