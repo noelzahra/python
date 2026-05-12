@@ -38,17 +38,17 @@ html = """
 <html>
     <head>
         <style>
-            table {
+            table {{
                 border-collapse: collapse;
-            }
-            tr:nth-child(odd){
+            }}
+            tr:nth-child(odd){{
                 background-color: #efefef;
-            }
-            td{
+            }}
+            td{{
                 border: 1px solid black;
                 padding: 8px;
-            }
-"""  + """</style>
+            }}
+        </style>
     </head>
     <body>
         <p>Hi,</p>
