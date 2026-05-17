@@ -25,8 +25,9 @@ def send_whatsapp(to: str = DCU_PHONE_NUMBER, body: str = None, content_sid: str
         user = "Noel"
         now = datetime.now().strftime("%A %d/%m/%Y %H:%M:%S")
         default_variables = {
-            "name"     : user,
-            "message"  : f"Daybatch created successfully on {now}"
+            "user"     : user,
+            "message"  : f"Daybatch created successfully on {now}",
+            "date"     : now
             }
         kwargs["content_sid"] = content_sid
         kwargs["content_variables"] = json.dumps(content_variables or default_variables)
