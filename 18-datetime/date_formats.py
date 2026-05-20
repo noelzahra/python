@@ -1,6 +1,6 @@
-# Using satettime library
+# Using datettime library
 
-from datetime import datetime, tzinfo
+from datetime import datetime, date, timedelta
 
 now = datetime.now()
 year = datetime.now().year
@@ -32,3 +32,14 @@ def get_log_date(daybatch):
             return log_date_formatted
 
 print(f"Log date: {get_log_date(daybatch)}")
+print(daybatch['Message'].split('. ')[2])
+
+# timedelta
+
+today = date.today()
+tdelta = timedelta(days=10)
+print(f"Today: {today}, 10 days later: {today + tdelta}, 10 days ago: {today - tdelta}")
+
+birthday = date(2026, 12, 21)
+till_next_birthday = birthday - today
+print(f"Days until next birthday: {till_next_birthday.days}")   
