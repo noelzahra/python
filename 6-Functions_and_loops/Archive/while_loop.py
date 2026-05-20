@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # 2 kinds  of loops in python for loop and while loops
 
 # while loops

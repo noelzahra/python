@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 print("=========================\n" + "Using for loop with a range" + "\n")
 # for loops
 for x in range(1, 8):

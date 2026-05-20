@@ -1,6 +1,3 @@
-from __future__ import print_function
-
-
 def invest(amount, rate, time):
     print("prinicpal amount: ${}".format(amount))
     print("annual rate of return: {}".format(rate))

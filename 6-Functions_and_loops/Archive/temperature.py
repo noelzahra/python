@@ -1,6 +1,3 @@
-from __future__ import division, print_function
-
-
 def convert_to_fahrenheit(temp):
     convert_to_float = float(temp)
     celsius = (convert_to_float * 9 / 5) + 32

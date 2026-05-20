@@ -1,6 +1,3 @@
-from __future__ import print_function
-
-
 def square(num):
     square_number = num ** num
     return square_number
