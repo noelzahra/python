@@ -1,4 +1,3 @@
-from __future__ import print_function
 from random import randint
 
 print(randint(0, 1))   # 50/50 chance of 0 or 1

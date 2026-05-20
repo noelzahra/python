@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Break the flow of program used in conjunction with a for or while loop
 
 for i in range(0, 4):
@@ -35,7 +33,7 @@ search_letter("Python is a great language to work with", "w")
 '''
 tries = 0
 while tries < 3:
-    password = raw_input("Password: ")
+    password = input("Password: ")
     if password == "pythoncoder":
         break
     else:
@@ -46,7 +44,7 @@ else:
 print("===================\n\t\tExercises\n===================")
 
 while True:
-    prompt = raw_input("Enter a letter: ")
+    prompt = input("Enter a letter: ")
     if((prompt == "q") or (prompt == "Q")):
         break
     print("{} entered".format(prompt))

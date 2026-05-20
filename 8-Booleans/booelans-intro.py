@@ -1,5 +1,3 @@
-from __future__ import print_function, division
-
 # Data-type: booleans
 true_is_one = 42 + True
 print(true_is_one)

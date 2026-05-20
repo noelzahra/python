@@ -1,5 +1,3 @@
-from __future__ import print_function, division
-
 # Exceptions
 
 
@@ -13,8 +11,8 @@ divide(33, 3)
 divide(33, 0)
 
 try:
-    number = int(raw_input("Enter an integer which is not zero: "))
-    print("10 / {} = {}".format(number, 10.0 / number))
+    number = int(input("Enter an integer which is not zero: "))
+    print("10 / {number} = {result}".format(number=number, result=10.0 / number))
 except ValueError:
     print("That's not an integer")
 except ZeroDivisionError:

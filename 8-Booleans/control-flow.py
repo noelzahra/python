@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Control flow
 
 
@@ -76,7 +74,7 @@ sport_selection(55, 60)
 
 print("===================\n\t\tExercises\n===================")
 
-prompt = raw_input("Password: ")
+prompt = input("Password: ")
 if (len(prompt) > 5):
     print("{} is too long".format(prompt))
 elif(len(prompt) < 5):

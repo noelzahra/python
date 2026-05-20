@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Boolean or-operator
 # At least one condition or both should be true
 

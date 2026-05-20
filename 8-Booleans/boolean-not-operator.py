@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Boolean not-operator
 # when condition is NOT TRUE boolean is FALSE
 # when condition is NOT FALSE boolean is TRUE
@@ -27,8 +25,7 @@ print("===================\n\t\tExercises\n===================")
 
 print("(1 <= 1) and (1 != 1) bool is: {} and {} = {}\
       ".format((1 <= 1), (1 != 1), (1 <= 1) and (1 != 1)))
-print("not (1 != 2) bool is: not {} = {}".format(not (1 != 2), (1 != 2),
-                                                 not (1 != 2)))
+print("not (1 != 2) bool is: not {} = {}".format(not (1 != 2), (1 != 2)))
 print("(\"good\" != \"bad\") or False is: {} or {} bool is {}\
       ".format(("good" != "bad"), False, ("good" != "bad") or False))
 print("(\"good\" != \"Good\") and not (1 == 1) is: {} and {} bool is: {}\

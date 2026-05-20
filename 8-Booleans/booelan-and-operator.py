@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # and logical operator
 # Both conditionals should be true
 
