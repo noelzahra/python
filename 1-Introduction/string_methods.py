@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # Objects & Methods
 
 # upper() method makes uppercase
@@ -7,7 +5,7 @@ name = "Scott"
 message = "Welcome " + name
 print(message.upper())
 
-response = raw_input("What should I do")
+response = input("What should I do")
 response = response.upper()
 print("You said: ", response.upper())
 
@@ -30,7 +28,7 @@ print(concat)
 
 # Exrecise
 
-prompt = raw_input("What's your opinion")
+prompt = input("What's your opinion")
 print("You said: ", prompt)
 
 password = "PYTHONCODER"

@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # More string exercises len function
 string = "Allemagne"
 stringLength = len(string)
