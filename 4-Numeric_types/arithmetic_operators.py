@@ -1,6 +1,3 @@
-'''from __future__ import print_function
-from __future__ import division
-'''
 # Maths
 add_total = 6 * (1 + 6)
 print(add_total)
