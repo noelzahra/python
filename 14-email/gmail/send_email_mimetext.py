@@ -20,6 +20,7 @@ PORT = int(os.getenv("SSL_PORT"))
 now = datetime.now()
 day = now.strftime("%a, %d-%b-%Y")
 timestamp = now.strftime("%d-%b-%Y, %H:%M:%S")
+user = RECIEVER.split(".")[0].capitalize()
 
 #Email message
 message = MIMEMultipart('alternative')
@@ -31,45 +32,45 @@ message['To'] = RECIEVER
 text = """\
 Subject: CATI dashboard notification
 
-ICT Daybatch completed on {}
+ICT Daybatch completed on {timestamp}
 
 Regards,
 DCU tools
-""".format(timestamp) 
+"""
 
 html = """
 <html>
     <head>
         <style>
-            table {
+            table {{
                 border-collapse: collapse;
-            }
-            tr:nth-child(odd){
+            }}
+            tr:nth-child(odd){{
                 background-color: #efefef;
-            }
-            td{
+            }}
+            td{{
                 border: 1px solid black;
                 padding: 8px;
-            }
-"""  + """</style>
+            }}
+        </style>
     </head>
     <body>
-        <p>Hi,</p>
-        <p>ICT Daybatch completed on {}</p>
+        <p>Hi {user},</p>
+        <p>ICT Daybatch completed on {timestamp}</p>
         <table>
             <tr>
                 <td><b>Time</b></td>
                 <td><b>Details</b></td>
             </tr>
             <tr>
-                <td>{}</td>
+                <td>{timestamp}</td>
                 <td>346 cases completed successfully</td>
             </tr>
         </table>
         <p>Have a nice day</p>
     </body>
 </html>   
-""".format(day, timestamp)
+"""
 
 text_message = MIMEText(text, 'plain')
 html_message = MIMEText(html, 'html')
@@ -80,5 +81,11 @@ message.attach(html_message) #last attach is preferred one, shown first by brows
 context = ssl.create_default_context()
 
 with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
-    server.login(SENDER, APP_PASSWORD)
-    server.sendmail(SENDER, RECIEVER, message.as_string())
+    try:
+        server.login(SENDER, APP_PASSWORD)
+        server.sendmail(SENDER, RECIEVER, message.as_string())
+        print(f"Email sent successfully to: {RECIEVER}")
+    except Exception as e:
+        print(e)
+    finally:
+        server.quit()

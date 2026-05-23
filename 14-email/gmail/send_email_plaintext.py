@@ -32,5 +32,11 @@ DCU tools
 """.format(SENDER, RECIEVER, timestamp)
 
 with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context = context) as server:
-    server.login(SENDER, APP_PASSWORD)
-    server.sendmail(SENDER, RECIEVER, message)
+    try:
+        server.login(SENDER, APP_PASSWORD)
+        server.sendmail(SENDER, RECIEVER, message)
+        print(f"Email sent successfully to: {RECIEVER}")
+    except Exception as e:
+        print(e)
+    finally:
+        server.quit()

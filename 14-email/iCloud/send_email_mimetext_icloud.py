@@ -18,6 +18,7 @@ APP_PASSWORD = os.getenv("APP_PASSWORD")
 now = datetime.now()
 day = now.strftime("%a, %d-%b-%Y")
 timestamp = now.strftime("%d-%b-%Y, %H:%M:%S")
+user = RECIPIENT_EMAIL.split("@")[0].capitalize()
 
 message = MIMEMultipart('alternative')
 
@@ -28,11 +29,11 @@ message['To'] = RECIPIENT_EMAIL
 text = """\
 Subject: CATI dashboard notification
 
-ICT Daybatch completed on {}
+ICT Daybatch completed on {timestamp}
 
 Regards,
 DCU tools
-""".format(timestamp) 
+"""
 
 html = """
 <html>
@@ -51,22 +52,22 @@ html = """
         </style>
     </head>
     <body>
-        <p>Hi,</p>
-        <p>ICT Daybatch completed on {}</p>
+        <p>Hi {user},</p>
+        <p>ICT Daybatch completed on {timestamp}</p>
         <table>
             <tr>
                 <td><b>Time</b></td>
                 <td><b>Details</b></td>
             </tr>
             <tr>
-                <td>{}</td>
+                <td>{timestamp}</td>
                 <td>346 cases completed successfully</td>
             </tr>
         </table>
         <p>Have a nice day</p>
     </body>
 </html>   
-""".format(day, timestamp)
+"""
 
 text_message = MIMEText(text, 'plain')
 html_message = MIMEText(html, 'html')
@@ -75,6 +76,11 @@ message.attach(text_message)
 message.attach(html_message) #last attach is preferred one, shown first by browser
 
 with smtplib.SMTP(SMTP_SERVER, PORT) as server:
-    server.starttls() #upgrade to secure connection
-    server.login(SENDER_EMAIL, APP_PASSWORD)
-    server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, message.as_string())
+    try:
+        server.starttls() #upgrade to secure connection
+        server.login(SENDER_EMAIL, APP_PASSWORD)
+        server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, message.as_string())
+    except Exception as e:
+        print(e)
+    finally:
+        server.quit()
