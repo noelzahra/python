@@ -53,7 +53,8 @@ interviewer_quotas = {name: compute_quotas(mx) for name, mx in interviewers.item
 
 print("\nPer-interviewer source quotas:")
 hdr = f"{'Interviewer':<12} {'Max':>4}  " + "  ".join(f"Src{s}" for s in source_values)
-print(hdr); print("-" * len(hdr))
+print(hdr) 
+print("-" * len(hdr))
 for name, mx in interviewers.items():
     q = interviewer_quotas[name]
     cols = "  ".join(f"{q[s]:>4}" for s in source_values)
@@ -110,13 +111,14 @@ print(df.to_string(index=False))
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 print("\n── Per-interviewer actual distribution ──")
-print(hdr); print("-" * len(hdr))
+print(hdr)
+print("-" * len(hdr))
 for name, mx in interviewers.items():
     sub  = df[df["interviewer"] == name]
     cols = "  ".join(f"{int((sub['source']==s).sum()):>4}" for s in source_values)
     print(f"{name:<12} {len(sub):>4}   {cols}   (max {mx})")
 
 # ── Save ──────────────────────────────────────────────────────────────────────
-out = "/mnt/user-data/outputs/household_assignments.csv"
+out = "./household_assignments.csv"
 df.to_csv(out, index=False)
 print(f"\nSaved → {out}")
