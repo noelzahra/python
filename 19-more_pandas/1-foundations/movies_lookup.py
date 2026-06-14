@@ -35,7 +35,7 @@ print(genre.head())
 COUNTING VALUES IN A SERIES
     Counting values in a Series can be done using the Series method count() or value_counts()
 """
-# Count values in a Series
+# Count values in a Series. Count() returns non null values in a Series
 directors_count = director_name.count()
 print(f"Number of directors: {directors_count}")
 
@@ -53,4 +53,17 @@ size_of_directors = director_name.size
 print(f"Number of directors using len(): {number_of_directors} Number of directiors using size: {size_of_directors}")
 
 
+"""
+Stats about DataFrame and Series
+"""
 
+genre_stats = genre.describe()
+print(f"Genre stats: \n{genre_stats}")
+
+"""
+Drop Nan values in a Series
+
+    1. dropna() method returns a Series with null values removed
+    2. dropna() method can be chained with other methods
+"""
+print(f"Dropping NaN values from director_name: \n{movies['director_name'].dropna()}, Remaining values: {movies['director_name'].dropna().count()}")
