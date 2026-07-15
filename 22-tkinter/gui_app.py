@@ -1,5 +1,9 @@
 '''
-    Using tkinter to build a gui application
+    Using tkinter to build a gui application fpor LFS automation. 
+    The application will allow the user to load a .xls file from Domain and convert it to a .xlsm setup file for the Blaise app.
+    To add a logging feature, we can use the logging module to log events and errors. The logs can be saved to a file for later review.
+    To add a notification system, we can use message boxes to inform the user of the status of the application, such as when a file is successfully loaded or if an error occurs.
+    and report on teams
 '''
 
 import tkinter as tk
@@ -53,38 +57,50 @@ def show_head(df):
     for _, row in head.iterrows():
         tree.insert("", "end", values=list(row))
 
-    # Horizontal scrollbar in case there are many columns
     xscroll = ttk.Scrollbar(preview_frame, orient="horizontal", command=tree.xview)
     tree.configure(xscrollcommand=xscroll.set)
 
     tree.pack(fill="both", expand=True)
     xscroll.pack(fill="x")
 
-# --- Build the GUI ---
+# --- Build the main window ---
 root = tk.Tk()
 root.title("Blaise Setup File Converter")
-root.geometry("900x500")  # larger window to fit the preview
+root.geometry("900x500")
 
-# Description above the button
+# --- Notebook (tab container) ---
+notebook = ttk.Notebook(root)
+notebook.pack(fill="both", expand=True)
+
+# ============ CATI tab ============
+cati_tab = ttk.Frame(notebook)
+notebook.add(cati_tab, text="CATI")
+
 description_label = tk.Label(
-    root,
+    cati_tab,
     text="Load .xls file from Domain to convert to .xlsm setup file for Blaise app.",
     font=("Segoe UI", 10, "bold")
 )
 description_label.pack(pady=(15, 5))
 
-tk.Button(root, text="Load File", command=load_file, width=20).pack(pady=10)
+tk.Button(cati_tab, text="Load File", command=load_file, width=20).pack(pady=10)
 
-status_label = tk.Label(root, text="No file loaded yet", wraplength=850)
+status_label = tk.Label(cati_tab, text="No file loaded yet", wraplength=850)
 status_label.pack(pady=5)
 
 # Frame that will hold the df.head() preview
-preview_frame = tk.Frame(root)
+preview_frame = tk.Frame(cati_tab)
 preview_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-# Close button pinned to the bottom right
-bottom_frame = tk.Frame(root)
-bottom_frame.pack(fill="x", side="bottom", pady=10, padx=10)
-tk.Button(bottom_frame, text="Close", command=root.destroy, width=12).pack(side="right")
+# Close button pinned to the bottom right of the CATI tab
+cati_bottom = tk.Frame(cati_tab)
+cati_bottom.pack(fill="x", side="bottom", pady=10, padx=10)
+tk.Button(cati_bottom, text="Close", command=root.destroy, width=12).pack(side="right")
+
+# ============ CAPI tab (blank for now) ============
+capi_tab = ttk.Frame(notebook)
+notebook.add(capi_tab, text="CAPI")
+
+tk.Label(capi_tab, text="CAPI panel — coming soon").pack(pady=20)
 
 root.mainloop()
