@@ -1,5 +1,5 @@
 '''
-    Using tkinter to build a gui application fpor LFS automation. 
+    Using tkinter to build a gui application for LFS automation. 
     The application will allow the user to load a .xls file from Domain and convert it to a .xlsm setup file for the Blaise app.
     To add a logging feature, we can use the logging module to log events and errors. The logs can be saved to a file for later review.
     To add a notification system, we can use message boxes to inform the user of the status of the application, such as when a file is successfully loaded or if an error occurs.
@@ -65,8 +65,14 @@ def show_head(df):
 
 # --- Build the main window ---
 root = tk.Tk()
-root.title("Blaise Setup File Converter")
-root.geometry("900x500")
+root.title("LFS Setup File Converter")
+root.geometry("1000x600")
+
+# Bring window to the front on launch
+root.lift()
+root.attributes("-topmost", True)
+root.after(100, lambda: root.attributes("-topmost", False))
+root.focus_force()
 
 # --- Notebook (tab container) ---
 notebook = ttk.Notebook(root)
@@ -78,7 +84,7 @@ notebook.add(cati_tab, text="CATI")
 
 description_label = tk.Label(
     cati_tab,
-    text="Load .xls file from Domain to convert to .xlsm setup file for Blaise app.",
+    text="Load .xls file from Domain to convert to .xlsm setup file\n for the management.msu module in the Blaise app.",
     font=("Segoe UI", 10, "bold")
 )
 description_label.pack(pady=(15, 5))
@@ -92,9 +98,13 @@ status_label.pack(pady=5)
 preview_frame = tk.Frame(cati_tab)
 preview_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-# Close button pinned to the bottom right of the CATI tab
+# Bottom bar: version label on the left, Close button on the right
 cati_bottom = tk.Frame(cati_tab)
 cati_bottom.pack(fill="x", side="bottom", pady=10, padx=10)
+
+version_label = tk.Label(cati_bottom, text="DCU tools v1.0 beta", fg="gray")
+version_label.pack(side="left")
+
 tk.Button(cati_bottom, text="Close", command=root.destroy, width=12).pack(side="right")
 
 # ============ CAPI tab (blank for now) ============
