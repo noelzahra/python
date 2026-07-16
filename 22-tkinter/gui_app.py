@@ -30,6 +30,23 @@ def load_file():
         else:
             df = pd.read_csv(file_path)
 
+        # Drop the 'Person_ref' column from Domain file if it exists
+        if 'Person_ref' in df.columns:
+            df.drop('Person_ref', axis=1, inplace=True)
+
+        # Ensure Household_HH is string type
+        household_hh_cols = pd.DataFrame(
+            {
+                'Household_HH': df['Dwelling_No'].astype(str) + '_' + df['HH_Number'].astype(str)
+            }
+        )
+        df = pd.concat([household_hh_cols, df], axis=1)
+
+        # Fill NaN values with empty strings
+        df = df.fillna('').astype(str)
+        df = df.apply(lambda col: col.str.replace(r'\.0', '', regex=True))
+
+
         status_label.config(
             text=f"Loaded: {file_path}\nRows: {len(df)}, Columns: {len(df.columns)}"
         )
