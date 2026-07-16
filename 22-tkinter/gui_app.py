@@ -42,7 +42,7 @@ def show_head(df):
     for widget in preview_frame.winfo_children():
         widget.destroy()
 
-    head = df.head()
+    head = df.head(20)
 
     tree = ttk.Treeview(
         preview_frame,
@@ -63,7 +63,7 @@ def show_head(df):
     tree.pack(fill="both", expand=True)
     xscroll.pack(fill="x")
 
-# --- Build the main window ---
+# Build the main window
 root = tk.Tk()
 root.title("LFS Setup File Converter")
 root.geometry("1000x600")
@@ -74,11 +74,11 @@ root.attributes("-topmost", True)
 root.after(100, lambda: root.attributes("-topmost", False))
 root.focus_force()
 
-# --- Notebook (tab container) ---
+# Notebook (tab container)
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True)
 
-# ============ CATI tab ============
+# CATI tab
 cati_tab = ttk.Frame(notebook)
 notebook.add(cati_tab, text="CATI")
 
@@ -107,10 +107,26 @@ version_label.pack(side="left")
 
 tk.Button(cati_bottom, text="Close", command=root.destroy, width=12).pack(side="right")
 
-# ============ CAPI tab (blank for now) ============
+# CAPI tab (blank for now)
 capi_tab = ttk.Frame(notebook)
 notebook.add(capi_tab, text="CAPI")
 
-tk.Label(capi_tab, text="CAPI panel — coming soon").pack(pady=20)
+description_label = tk.Label(
+    capi_tab, 
+    text="CAPI panel — coming soon", 
+    font=("Segoe UI", 10, "bold")
+)
+description_label.pack(pady=20)
+
+# Audits tab (blank for now)
+audits_tab = ttk.Frame(notebook)
+notebook.add(audits_tab, text="Audits") 
+
+description_label = tk.Label(
+    audits_tab,
+    text="Load .xls file from Domain to convert to .xlsm setup file\n for the management.msu module in the Blaise app.",
+    font=("Segoe UI", 10, "bold")
+)
+description_label.pack(pady=20)
 
 root.mainloop()
