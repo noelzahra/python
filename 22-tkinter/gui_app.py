@@ -1,7 +1,7 @@
 '''
     Using tkinter to build a gui application for LFS automation. 
-    The application will allow the user to load a .xls file from Domain and convert it to a .xlsm setup file for the Blaise app.
-    To add a logging feature, we can use the logging module to log events and errors. The logs can be saved to a file for later review.
+    The application will allow the user to load an .xls file from Domain and convert it to an .xlsm setup file for the Blaise app.
+    To add a logging feature, withthe logging module to log events and errors. The logs can be saved to a file for later review.
     To add a notification system, we can use message boxes to inform the user of the status of the application, such as when a file is successfully loaded or if an error occurs.
     and report on teams
 '''
