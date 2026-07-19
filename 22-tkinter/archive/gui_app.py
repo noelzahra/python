@@ -42,7 +42,7 @@ def load_file():
         )
         df = pd.concat([household_hh_cols, df], axis=1)
 
-        # Fill NaN values with empty strings
+        # Fill NaN values with empty string '', remove '.0' from numeric columns, and convert to string type
         df = df.fillna('').astype(str)
         df = df.apply(lambda col: col.str.replace(r'\.0', '', regex=True))
 
