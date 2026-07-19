@@ -14,3 +14,11 @@
 2026-07-19 14:52:26,647 INFO     Dropped Person_ref column from Domain file
 2026-07-19 14:52:26,649 INFO     Created Household_HH and Person_ref columns according to DCU format
 2026-07-19 14:52:26,744 INFO     Removed all #NULL! values
+2026-07-19 14:58:16,362 INFO     Opening 'Upload File July - Normal Hhlds.xlsx' file
+2026-07-19 14:58:20,656 INFO     Dropped Person_ref column from Domain file
+2026-07-19 14:58:20,658 INFO     Created Household_HH and Person_ref columns according to DCU format
+2026-07-19 14:58:20,766 INFO     Removed all #NULL! values
+2026-07-19 15:06:24,944 INFO     Opening 'Upload File July - Normal Hhlds.xlsx' file
+2026-07-19 15:06:52,719 INFO     Dropped Person_ref column from Domain file
+2026-07-19 15:06:52,720 INFO     Created Household_HH and Person_ref columns according to DCU format
+2026-07-19 15:06:52,824 INFO     Removed all #NULL! values
