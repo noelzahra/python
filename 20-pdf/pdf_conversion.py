@@ -3,7 +3,6 @@
 '''
 
 import camelot
-import pandas as pd
 from pathlib import Path
 
 tables = camelot.read_pdf(
@@ -12,10 +11,9 @@ tables = camelot.read_pdf(
     password='osOcv5KA'
 )
 
-output_file = tables.export (
-    str(Path(__file__).parent / 'pdfs/99092086_Jan2026_ITB.csv'),
-    f='csv'
+tables.export(
+    str(Path(__file__).parent / '99092086_Jan2026_ITB.xlsx'),
+    f='excel'
 )
 
-df = pd.read_csv(str(Path(__file__).parent / '99092086_Jan2026_ITB.csv'), encoding='utf-8', dtype=str)
-print(df.head())
+print(f"Exported {len(tables)} table(s) to 99092086_Jan2026_ITB.xlsx")
