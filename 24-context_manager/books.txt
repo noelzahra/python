@@ -1,0 +1,8 @@
+Book 1: The Great Gatsby
+Book 2: To Kill a Mockingbird
+Book 3: 1984
+Book 4: Pride and Prejudice
+Book 5: The Catcher in the Rye
+Book 6: The Hobbit
+Book 7: Fahrenheit 451
+Book 8: The Lord of the Rings
