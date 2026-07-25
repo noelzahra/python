@@ -1,0 +1,10 @@
+{
+    "John Doe": {
+        "name": "John Doe",
+        "gender": "Male"
+    },
+    "Jane Smith": {
+        "name": "Jane Smith",
+        "gender": "Female"
+    }
+}
