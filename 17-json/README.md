@@ -41,6 +41,7 @@ Write json with context manager
 ```
 
 In bash command you can use python's `json.tool <filename>` to validate the json file
+
 ```bash
     py -m json.tool data.json
 ```
