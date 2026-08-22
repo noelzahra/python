@@ -4,7 +4,7 @@ import requests
 url = "https://jsonplaceholder.typicode.com/users/1/todos/"
 
 
-def todo_status(url: str):
+def todo_status(url: str) -> tuple[list[str], list[str]]:
     """Split todos into completed and not-completed title lists."""
     response = requests.get(url)
     print(response.status_code)
