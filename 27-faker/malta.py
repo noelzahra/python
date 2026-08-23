@@ -7,6 +7,8 @@ This provider fills that gap.
 
 from faker.providers import BaseProvider
 
+#Constant as tuples
+
 FIRST_NAMES_MALE = (
     'Joseph', 'Paul', 'Carmel', 'John', 'Emanuel', 'Anthony', 'Charles',
     'Alfred', 'Michael', 'Matthew', 'Luke', 'Karl', 'Kurt', 'Ryan',
