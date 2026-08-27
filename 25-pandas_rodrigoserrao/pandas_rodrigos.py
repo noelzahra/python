@@ -26,7 +26,7 @@ df_chosen_stats = df_pokemon[keep]
 
 
 def main():
-    # df_summary(df_pokemon)
+    df_summary(df_pokemon)
     selected_columns_df = selected_columns(df_pokemon)
     print(selected_columns_df.head(3))
     print(len(df_chosen_stats.columns))
