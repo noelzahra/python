@@ -38,9 +38,9 @@ def main():
 
 
     print(sequence(3))
-    # styled = df_chosen_stats.head(3).style.highlight_max(color="lightgreen")
-    # styled.to_html("styled_stats.html")
-    # webbrowser.open("styled_stats.html")
+    styled = df_chosen_stats.head(3).style.highlight_max(color="lightgreen")
+    styled.to_html("styled_stats.html")
+    webbrowser.open("styled_stats.html")
 
 if __name__ == "__main__":
     main()
