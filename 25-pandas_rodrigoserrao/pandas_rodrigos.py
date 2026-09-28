@@ -23,16 +23,24 @@ stats = list(selected_columns(df_pokemon).columns)
 keep = (["english_name", "gen"] + stats + ["primary_type", "is_sublegendary", "is_legendary", "is_mythical"])
 df_chosen_stats = df_pokemon[keep]
 
-
+def sequence(num: int) -> list:
+    list_of_nums = []
+    for i in range(num):
+        num = i + 5 *2
+        list_of_nums.append(num)
+    return list_of_nums
 
 def main():
     df_summary(df_pokemon)
     selected_columns_df = selected_columns(df_pokemon)
     print(selected_columns_df.head(3))
     print(len(df_chosen_stats.columns))
-    styled = df_chosen_stats.head(3).style.highlight_max(color="lightgreen")
-    styled.to_html("styled_stats.html")
-    webbrowser.open("styled_stats.html")
+
+
+    print(sequence(3))
+    # styled = df_chosen_stats.head(3).style.highlight_max(color="lightgreen")
+    # styled.to_html("styled_stats.html")
+    # webbrowser.open("styled_stats.html")
 
 if __name__ == "__main__":
     main()
