@@ -7,4 +7,6 @@ venv/
 .venv/
 
 .lock
-.log
+*.log
+__pycache__/
+*.pyc
