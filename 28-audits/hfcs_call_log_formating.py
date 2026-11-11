@@ -18,20 +18,20 @@ OUTPUT_FILE = BASE_DIR / "output" / "HFCS_formatted_call_log.xlsx"
 def load_call_log(path):
     #Reading the GO outgoing report and flatten it into one table
     
-    raw = pd.read_excel(path, header=None, dtype=str)
-    first_col = raw[0].str.strip()
+    call_log = pd.read_excel(path, header=None, dtype=str)
+    first_col = call_log[0].str.strip()
 
     # Carry each 'Extension :' number down onto the call rows below it
     is_extension_row = first_col.str.startswith("Extension", na=False)
-    extension = raw[1].where(is_extension_row).ffill()
+    extension = call_log[1].where(is_extension_row).ffill()
 
     # Call rows are the ones where the called number is all digits
     is_call_row = first_col.str.fullmatch(r"\d+", na=False)
 
     # Column titles come from the first 'Called Number' row
-    header_row = raw[first_col.eq("Called Number")].iloc[0]
+    header_row = call_log[first_col.eq("Called Number")].iloc[0]
 
-    calls = raw[is_call_row].copy()
+    calls = call_log[is_call_row].copy()
     calls.columns = header_row.str.strip()
     calls.insert(0, "Extension", extension[is_call_row].astype(int))
     return calls.reset_index(drop=True)
